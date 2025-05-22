@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Gallery Assignment</title>
+    <!-- CSS Styles -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 1rem 0;
+            text-align: center;
+        }
+
+        main {
+            padding: 2rem;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            grid-gap: 15px;
+        }
+
+        .gallery img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            transition: transform 0.2s;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.05);
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 600px) {
+            main {
+                padding: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Color Compositions Gallery</h1>
+        <h3>A display of the original images, overlay of the images with their corresponding color filters, and then 
+            their appropriate alignment.
+        </h3>
+    </header>
+
+    <main>
+
+        <p>
+            My Alignment Algorithm: <br>
+            I split alignment into three steps:
+            1. First, calculate the edge maps of each colored filter.
+            2. Using one of the edge maps (blue color) as a base, transform the other two channel edge maps
+            in many small different iterations.
+            3. Calculate the distances of corresponding edge maps, and select the two edge maps per channel with smallest deviation from the base.
+            4. Overlay the transformed color channels over each other, and save as image.
+        </p>
+
+        <section class="gallery">
+            <!-- Image 1 -->
+            <div>
+                <h2>Seed Gallery</h2>
+                <h3>Original</h3>
+                <img src="example_images/1.jpg" alt="Seeds">
+                <h3>Before</h3>
+                <img src="images/1_before.jpg" alt="Image Before Alignment">
+                <h3>After</h3>
+                <img src="images/1_after.jpg" alt="Image Post Alignment">
+            </div>
+
+            <!-- Image 2 -->
+            <div>
+                <h2>Train Station</h2>
+                <h3>Original</h3>
+                <img src="example_images/2.jpg" alt="Train Color Channels">
+                <h3>Before</h3>
+                <img src="images/2_before.jpg" alt="Image Before Alignment">
+                <h3>After</h3>
+                <img src="images/2_after.jpg" alt="Image Post Alignment">
+            </div>
+
+            <!-- Image 3 -->
+            <div>
+                <h2>Lady in Dress</h2>
+                <h3>Original</h3>
+                <img src="example_images/3.jpg" alt="Lady Color Channels">
+                <h3>Before</h3>
+                <img src="images/3_before.jpg" alt="Image Before Alignment">
+                <h3>After</h3>
+                <img src="images/3_after.jpg" alt="Image Post Alignment">
+            </div>
+
+            <!-- Image 4 -->
+            <div>
+                <h2>Coastline</h2>
+                <h3>Original</h3>
+                <img src="example_images/4.jpg" alt="Coastline Color Channels">
+                <h3>Before</h3>
+                <img src="images/4_before.jpg" alt="Image Before Alignment">
+                <h3>After</h3>
+                <img src="images/4_after.jpg" alt="Image Post Alignment">
+            </div>
+            
+            <!-- Image 5 -->
+            <div>
+                <h2>Clothing</h2>
+                <h3>Original</h3>
+                <img src="example_images/5.jpg" alt="Wearing Dress Color Channels">
+                <h3>Before</h3>
+                <img src="images/5_before.jpg" alt="Image Before Alignment">
+                <h3>After</h3>
+                <img src="images/5_after.jpg" alt="Image Post Alignment">
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        &copy; 2025 Muyi Aghedo | Assignment Submission
+    </footer>
+
+</body>
+</html>
